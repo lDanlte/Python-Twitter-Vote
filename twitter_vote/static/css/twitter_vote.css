@@ -1,0 +1,71 @@
+
+@keyframes inputError {
+    0% { background-color: white; }
+    50% { background-color: #ff4038; }
+    100% { background-color: white; }
+}
+
+.tweet-input {
+    padding: 10px;
+    border: none;
+    border-bottom: solid 2px #c9c9c9;
+    transition: border 0.4s;
+    font-family: "Lucida Bright", Georgia, serif;
+    font-size: 16px;
+}
+
+.tweet-input.error {
+    animation: inputError 1.5s ease 1;
+}
+
+.tweet-input:focus, .tweet-input.focus {
+    border-bottom: solid 4px #969696;
+    outline: none;
+}
+
+.enter-button {
+    margin-left: 8px;
+    margin-right: 3px;
+    background: url("../image/icon/arrow-right.png") center center no-repeat;
+    padding: 18px 14px;
+    outline: none;
+    border: none;
+    max-width: 40px;
+    transition: all 0.4s linear;
+    transition-property: border, margin;
+    border-left: solid 2px #c9c9c9;
+
+}
+
+.enter-button:hover {
+    cursor: pointer;
+    border-left: solid 5px #666666;
+    margin-right: 0;
+
+}
+
+.vote-button {
+    outline: none;
+    color: #969696;
+    background-color: rgba(255, 255, 255, 0);
+    font-family: "Lucida Bright", Georgia, serif;
+    font-size: 16px;
+    border: solid 2px rgba(0, 0, 0, 0.0);
+    padding-right: 2px;
+}
+
+.vote-button:hover {
+    cursor: pointer;
+}
+
+.vote-button.like.selected {
+    border: solid 2px #e23a3d;
+    border-radius: 8px;
+    color: #e23a3d;
+}
+
+.vote-button.dislike.selected {
+    border: solid 2px #000000;
+    border-radius: 8px;
+    color: #000000;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tweet vote</title>
+
+    <link rel="stylesheet" type="text/css" charset="utf-8" href="{% static "css/twitter_vote.css" %}" />
+
+</head>
+<body>
+
+    <div style="display: flex; width: 100%;">
+
+        <div style="float: left;">
+            <b>Current user:</b> <br/>
+            <img src="{{ current_user.profile_icon }}"/> <b>{{ current_user.user_name }}</b>
+        </div>
+
+        <div style="float: left; margin: auto;">
+            <input id="tweetUrl" type="text" class="tweet-input" autofocus="autofocus" size="60" placeholder="Enter the url of the tweet"/>
+
+            <button type="button" class="enter-button" onclick="loadTweet();"></button>
+
+            <br/>
+
+            <div id="tweetHolder" style="margin-top: 20px;"></div>
+
+            <div id="voteButtonsHolder" style="width: 150px; margin: 10px auto auto; display: none;">
+
+                <button id="likeButton" type="button" onclick="vote('like');" class="vote-button like" style="margin-right: 20px;">
+                    <img src="{% static "image/icon/like.png" %}"/>
+                    <br/>
+                    <div id="likesCount" style="margin-right: 6px;">13</div>
+                </button>
+
+                <button id="dislikeButton" type="button" onclick="vote('dislike');" class="vote-button dislike">
+                    <img src="{% static "image/icon/dislike.png" %}" />
+                    <br/>
+                    <div id="dislikesCount" style="margin-right: 6px;">69</div>
+                </button>
+
+            </div>
+
+        </div>
+
+        <div style="float: left;"></div>
+
+    </div>
+
+    <script type="application/javascript" charset="utf-8" src="{% static "js/libs/jquery/jquery-3.1.1.min.js" %}"></script>
+    <script type="application/javascript" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
+
+    <script type="application/javascript" charset="utf-8" src="{% static "js/twitter_vote.js" %}"></script>
+
+</body>
+</html>
